@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar color="primary">                
+        <ion-item button color="primary">
+           <ion-back-button  defaultHref="desocupacao"></ion-back-button>                         
+           <h3>Nova Desocupacao</h3>
+        </ion-item>    
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>     
+    <ion-row>
+        <ion-col style="text-align: center">
+          <img src="assets/imgs/veiculo.png" alt="Logo">
+        </ion-col>
+    </ion-row> 
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label position="stacked">Placa</ion-label>
+               <ion-label>{{numplaca}}</ion-label>
+            </ion-item>
+        </ion-col>  
+        <ion-col>           
+            <ion-item>
+              <ion-label position="stacked">Vaga</ion-label>
+              <ion-label>{{ idvaga }}</ion-label>              
+            </ion-item>
+        </ion-col>  
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+               <ion-label position="stacked">Entrada</ion-label>
+               <ion-label>{{ entrada }}</ion-label>
+            </ion-item>
+        </ion-col>  
+        <ion-col>           
+            <ion-item>
+              <ion-label position="stacked">Hora</ion-label>
+              <ion-label>{{ horaentrada }}</ion-label>              
+            </ion-item>
+        </ion-col>  
+    </ion-row>     
+    <ion-row>
+        <ion-col>
+            <ion-item>
+               <ion-label position="stacked">Saida</ion-label>
+               <ion-label>{{ saida }}</ion-label>
+            </ion-item>
+        </ion-col>  
+        <ion-col>           
+            <ion-item>
+              <ion-label position="stacked">Hora</ion-label>
+              <ion-label>{{ horasaida }}</ion-label>              
+            </ion-item>
+        </ion-col>  
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+               <ion-label position="stacked">Valor pago R$</ion-label>
+               <ion-label>{{ valorpago }}</ion-label>
+            </ion-item>
+        </ion-col>       
+    </ion-row>
+    <ion-button expand="block" color="success" (click)="addDesocupacao()">Gravar</ion-button>      
+    
+</ion-content>

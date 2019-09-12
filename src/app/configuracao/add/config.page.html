@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">                
+    <ion-item button color="primary">
+       <ion-back-button  defaultHref="configuracao"></ion-back-button>                         
+       <ion-label>Nova Configuracao</ion-label>
+    </ion-item>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col style="text-align: center">
+            <img src="assets/imgs/config.png" alt="Logo">
+        </ion-col>
+      </ion-row>
+    <form novalidate (ngSubmit)="onSubmit(configForm)" [formGroup]="configForm"> 
+        <ion-row>
+           <ion-col>
+             <ion-item>
+                <ion-label position="stacked">Data</ion-label>
+                <ion-input type="text" formControlName="data" name="data"></ion-input> 
+             </ion-item>
+           </ion-col>             
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <ion-item>
+                 <ion-label position="stacked">Valor</ion-label>
+                 <ion-input type="text" formControlName="valor" name="valor"></ion-input> 
+              </ion-item>
+            </ion-col>             
+         </ion-row>         
+        <ion-button expand="block" color="success" type="ngSubmit">Gravar</ion-button>       
+      </form>
+
+</ion-content>

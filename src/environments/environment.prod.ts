@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true, 
+  urlBase : 'https://apirest-agefis.herokuapp.com/api'
 };

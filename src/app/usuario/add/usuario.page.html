@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">                
+      <ion-item button color="primary">
+         <ion-back-button  defaultHref="usuario"></ion-back-button>                         
+         <h3>Novo Usuario</h3>
+      </ion-item>    
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col style="text-align: center">
+        <img src="assets/imgs/login.png" alt="Logo">
+    </ion-col>
+  </ion-row> 
+  <form novalidate (ngSubmit)="onSubmit(addForm)" [formGroup]="addForm">  
+      <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input type="text" formControlName="nome" name="nome"></ion-input> 
+        </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>      
+      <ion-input type="text" formControlName="email" name="email"></ion-input> 
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input type="password" formControlName="senha" name="senha"></ion-input> 
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Redigite a Senha</ion-label>
+        <ion-input type="password"  name="redigite"> </ion-input> 
+      </ion-item>
+    <ion-button expand="block" color="success" type="ngSubmit">Cadastrar</ion-button>
+  </form>  
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+      <ion-toolbar color="primary">                
+         <ion-item button color="primary">
+            <ion-back-button  defaultHref="vaga"></ion-back-button>                         
+            <ion-label>Nova Vaga</ion-label>
+         </ion-item>    
+      </ion-toolbar>       
+  </ion-header>
+  
+  <ion-content>
+      <ion-row>
+        <ion-col style="text-align:center">
+          <img src="assets/imgs/logo.png" alt="Logo">
+        </ion-col>
+      </ion-row>
+      <form novalidate (ngSubmit)="onSubmit(vagaForm)" [formGroup]="vagaForm"> 
+          <ion-row>
+             <ion-col>
+                <ion-item>
+                   <ion-label position="stacked">Nome</ion-label>
+                   <ion-input type="text" formControlName="nome" name="nome"></ion-input> 
+                </ion-item>
+             </ion-col>             
+          </ion-row>
+          <ion-row>
+             <ion-col>
+                <ion-item>
+                    <ion-label position="stacked">Status</ion-label>
+                    <ion-select formControlName="status" [compareWith]="compareWith">
+                       <ion-select-option [value]="D">Desocupado</ion-select-option>
+                       <ion-select-option [value]="O">Ocupado</ion-select-option>
+                    </ion-select>
+                </ion-item>
+             </ion-col>             
+           </ion-row>         
+          <ion-button expand="block" color="success" type="ngSubmit">Gravar</ion-button>       
+        </form>
+  
+  </ion-content>
+  

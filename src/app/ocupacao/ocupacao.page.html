@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar color="primary">            
+        <ion-menu-toggle auto-hide="false">
+           <ion-button>
+                 <ion-icon name='menu'></ion-icon>
+           </ion-button>                                                
+           <h3>Ocupacao</h3>
+        </ion-menu-toggle>                    
+    </ion-toolbar>    
+</ion-header>
+
+<ion-content>
+    <ion-row>
+      <ion-col style="text-align: center">
+        <img src="assets/imgs/veiculo.png" alt="Logo">
+      </ion-col>
+    </ion-row> 
+    <form novalidate (ngSubmit)="onSubmit(ocupacaoForm)" [formGroup]="ocupacaoForm"> 
+      <ion-row>
+         <ion-col>
+           <ion-item>
+              <ion-label position="stacked">Placa</ion-label>
+              <ion-input type="text" formControlName="numplaca" name="numplac"></ion-input> 
+           </ion-item>
+         </ion-col>  
+      </ion-row>
+      <ion-row>
+         <ion-col>           
+           <ion-item>
+             <ion-label position="stacked">Vaga</ion-label>
+             <ion-select formControlName="idvaga" [compareWith]="compareWith">
+               <ion-select-option *ngFor="let vaga of vagas" [value]="vaga.id">{{vaga.nome}}</ion-select-option>
+             </ion-select>
+           </ion-item>
+         </ion-col>  
+      </ion-row>        
+      <ion-row>
+        <ion-list-header>
+            <ion-label>Tipo ocupacao</ion-label>
+        </ion-list-header>
+        <ion-radio-group formControlName="tipo">   
+          <ion-row>
+             <ion-col>
+                <ion-item>
+                  <ion-label>Horista </ion-label>
+                  <ion-radio value="1"></ion-radio>                     
+                </ion-item>  
+             </ion-col>   
+             <ion-col>
+                <ion-item>
+                  <ion-label>Mensalista </ion-label>
+                  <ion-radio value="2"></ion-radio>         
+                </ion-item>
+             </ion-col>
+          </ion-row>            
+        </ion-radio-group>
+      </ion-row>
+      <ion-button expand="block" color="success" type="ngSubmit">Gravar</ion-button>       
+    </form>
+
+</ion-content>

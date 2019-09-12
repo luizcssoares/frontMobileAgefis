@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">            
+      <ion-menu-toggle auto-hide="false">
+         <ion-button>
+               <ion-icon name='menu'></ion-icon>
+         </ion-button>                                                
+         <h3>Vagas</h3>
+      </ion-menu-toggle>                  
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="filterVagas($event)" placeholder="Digite a vaga"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+   <ion-list>
+      <ion-item *ngFor="let item of vagas">
+         <ion-icon name='car'></ion-icon>
+         <ion-label><h2>{{ item.nome }}</h2></ion-label>           
+         <ion-label><h4>{{ item.status }}</h4></ion-label>
+
+      </ion-item>
+   </ion-list>
+   <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button >
+         <ion-icon name="add" (click)="addVaga()"></ion-icon>
+      </ion-fab-button>    
+    </ion-fab>   
+</ion-content>

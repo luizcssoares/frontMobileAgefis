@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="primary">            
+        <ion-menu-toggle auto-hide="false">
+           <ion-button>
+                 <ion-icon name='menu'></ion-icon>
+           </ion-button>                                                
+           <h3>Movimentos</h3>
+        </ion-menu-toggle>                    
+    </ion-toolbar>
+</ion-header>
+<ion-content>    
+    <ion-list>
+                   
+        <ion-item *ngFor="let movimento of movimentos">
+            <ion-row> 
+                
+                <ion-thumbnail slot="start">          
+                  <img src="assets/imgs/vaga.jpg">
+                </ion-thumbnail>                
+                <ion-col>
+                    <ion-label position="stacked">Entrada</ion-label>
+                  <ion-label><h2>{{ movimento.entrada }}</h2></ion-label>           
+                  <ion-label><h4>{{ movimento.horaentrada }}</h4></ion-label>
+                </ion-col>                
+                <ion-col>
+                    <ion-label position="stacked">Saida</ion-label>
+                    <ion-label><h2>{{ movimento.saida }}</h2></ion-label>           
+                    <ion-label><h4>{{ movimento.horasaida }}</h4></ion-label>
+                </ion-col>                
+                <ion-col>
+                    <ion-label position="stacked">Veiculo/Vaga</ion-label>
+                    <ion-label><h2>{{ movimento.numplaca }}</h2></ion-label>           
+                    <ion-label><h4>{{ movimento.idvaga }}</h4></ion-label>
+                </ion-col>
+                <ion-col>
+                    <ion-label position="stacked">Pagamento</ion-label>
+                    <ion-label><h2>RS {{ movimento.valorpago }}</h2></ion-label>                               
+                </ion-col> 
+            </ion-row>
+        </ion-item>
+
+     </ion-list>
+</ion-content>
